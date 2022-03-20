@@ -1,0 +1,117 @@
+%shadow {
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.45);
+}
+
+%shaow-button {
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.46);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.46);
+}
+
+%shadow-hover {
+  -webkit-box-shadow: 0px 7px 10px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 7px 10px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 7px 10px 4px rgba(0, 0, 0, 0.4);
+}
+
+%border-radius {
+  border-radius: 5px;
+}
+
+%border-radius-big {
+  border-radius: 20px;
+}
+
+%-text--primary {
+  color: $primary;
+}
+
+%-text--secondary {
+  color: $secondary;
+}
+
+%-text--danger {
+  color: $danger;
+}
+
+%-text--success {
+  color: $success;
+}
+
+.text-brand {
+  @extend %-text--secondary;
+  font-weight: $black;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+@include small {
+  .hideen-small {
+    display: none !important;
+  }
+}
+
+@include medium {
+  .hidden-medium {
+    display: none !important;
+  }
+}
+
+@include large {
+  .hidden-large {
+    display: none !important;
+  }
+}
+
+@include medium-up {
+  .hidden-medium-up {
+    display: none !important;
+  }
+}
+
+@include medium-down {
+  .hidden-medium-down {
+    display: none !important;
+  }
+}
+
+@include large {
+  .hidden-large {
+    display: none !important;
+  }
+}
+
+@include medium {
+  .hidden-medium {
+    display: none !important;
+  }
+}
+
+@include small {
+  .hidden-small {
+    display: none !important;
+  }
+}
+
+.full-height {
+  min-height: 100%;
+  height: 100%;
+}
+
+* > div.sticky-container {
+  position: sticky;
+  -webkit-position: sticky;
+  top: 0;
+}
+
+.smooth-transition {
+  transition-duration: 300ms;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}

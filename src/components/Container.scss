@@ -1,0 +1,77 @@
+.transition-container {
+  // background: url(../../img/background.svg) fixed center center no-repeat;
+  position: relative;
+  width: 100%;
+  height: calc(100% - #{$header-top});
+  overflow: hidden;
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@include medium-down {
+  main {
+    position: sticky;
+  }
+}
+
+section {
+  min-height: 100%;
+}
+
+%padding-for-container {
+  padding: 5rem 0;
+  @include medium-down {
+    padding: 2.5rem 0;
+  }
+}
+
+%container-padding {
+  width: calc(100% - 1rem);
+  margin: 0 auto;
+  min-height: 100%;
+  @include medium-up {
+    width: calc(100% - 10rem);
+  }
+  @extend %padding-for-container;
+}
+
+.container--simple {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  @include medium {
+    width: calc(100% - 1rem);
+  }
+  @include large {
+    width: calc(100% - 10rem);
+  }
+}
+
+.container--small {
+  @extend %container-padding;
+  max-width: 50rem;
+}
+
+.container--medium {
+  @extend %container-padding;
+  max-width: 70rem;
+}
+
+.container--large {
+  @extend %container-padding;
+  max-width: 100rem;
+  height: 100%;
+}

@@ -1,0 +1,55 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: $gray-dark;
+  padding: 0.5rem;
+
+  // height: $footer-height;
+}
+
+.footer div {
+  padding: 0.3rem;
+}
+
+.footer .footer--adress {
+  line-height: 1rem;
+  display: inline-block;
+  color: $white;
+}
+
+.footer div,
+.footer div a {
+  font-family: $sans-serif;
+  color: $secondary;
+  letter-spacing: 1px;
+}
+
+.footer div a {
+  cursor: pointer;
+  transition-duration: 300ms;
+  &:hover {
+    color: $primary;
+  }
+}
+
+@include small-down {
+  .footer--adress {
+    font-size: 0.8rem;
+  }
+}
+
+.footer--adress-title {
+  font-weight: $black;
+}
+
+.footer--logo {
+  display: inline-block;
+  svg {
+    width: 120px;
+  }
+}

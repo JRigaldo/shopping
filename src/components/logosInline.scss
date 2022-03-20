@@ -1,0 +1,67 @@
+.logosInline {
+  margin-top: 5rem;
+  @include flex-center;
+
+  li {
+    margin: 0 1rem;
+    svg {
+      height: auto;
+      &.mastercard {
+        width: 4rem;
+      }
+      &.postfinance {
+        width: 7rem;
+      }
+      &.salt {
+        width: 5rem;
+      }
+      &.sunrise {
+        width: 6rem;
+      }
+      &.swisscom {
+        width: 4.3rem;
+      }
+      &.twint {
+        width: 7rem;
+      }
+      &.visa {
+        width: 5rem;
+      }
+    }
+  }
+}
+
+@include medium-down {
+  ul.logosInline {
+    flex-wrap: wrap;
+    background-color: $gray-light;
+    padding: 1rem 0;
+    li {
+      margin: 0.1rem 0.6rem;
+      svg {
+        height: auto;
+        &.mastercard {
+          width: 2.8rem;
+        }
+        &.postfinance {
+          width: 5rem;
+        }
+        &.salt {
+          width: 3rem;
+        }
+        &.sunrise {
+          width: 3.2rem;
+        }
+        &.swisscom {
+          width: 3rem;
+        }
+        &.twint {
+          width: 4rem;
+        }
+        &.visa {
+          width: 2.8rem;
+        }
+      }
+    }
+  }
+}

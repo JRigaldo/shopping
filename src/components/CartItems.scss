@@ -1,0 +1,76 @@
+.cartItems {
+  position: relative;
+  width: 100%;
+}
+
+.cartItems--container {
+  width: 100%;
+  background-color: $gray-light;
+  border-radius: 5px;
+  height: 60px;
+}
+
+.cart--intro-title {
+  padding: 5px 0;
+}
+.cart--intro {
+  font-weight: 600;
+}
+
+.cartItems--item {
+  display: table;
+  width: 100%;
+
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-top: 1px solid $gray-dark;
+  span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    min-width: 30px;
+  }
+}
+
+.cartItems--item {
+  .cartItems--pic {
+    width: 80px;
+    img {
+      height: 50px;
+      max-width: 50px;
+    }
+  }
+  .cartItems--title {
+    padding-left: 10px;
+    width: 50%;
+  }
+  .cartItems--cross {
+    .cross--container {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      transition-duration: 300ms;
+      cursor: pointer;
+      svg {
+        position: relative;
+        z-index: 1;
+        display: block;
+        fill: $black;
+        left: 8px;
+        transition-duration: 300ms;
+      }
+      &:hover {
+        svg {
+          fill: $primary;
+        }
+      }
+    }
+  }
+  .cartItems--dash,
+  .cartItems--count,
+  .cartItems--nb,
+  .cartItems--currency,
+  .cartItems--price {
+    padding-right: 10px;
+  }
+}

@@ -1,0 +1,341 @@
+.checkoutForm {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.checkoutForm--container {
+  @include absolute-center;
+}
+
+.form--container {
+  position: relative;
+  display: block;
+  padding: 1.5rem;
+  background-color: $white;
+  max-width: 400px;
+  margin: 0 auto;
+  @extend %border-radius-big;
+  @extend %shadow;
+  // margin: 4rem auto;
+  // @include medium-down {
+  //   margin: 1rem auto;
+  // }
+  h4 {
+    margin-bottom: 1rem;
+  }
+
+  .error {
+    font-style: italic;
+    margin: 2rem 0;
+    color: $secondary;
+  }
+  .important {
+    font-style: italic;
+    margin: 2rem 0;
+    color: $secondary;
+    font-size: 1.5rem;
+  }
+}
+
+.field {
+  position: relative;
+  height: 72px;
+  padding: 16px 0 8px 0;
+}
+
+.field-message {
+  position: relative;
+  min-height: 72px;
+  padding: 16px 0 0 0;
+}
+
+.field-label {
+  position: relative;
+  line-height: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+  margin: 0;
+  transform: translateY(24px);
+  transition: transform 0.3s;
+  transform-origin: 0 50%;
+  z-index: 10;
+  color: $primary;
+  margin-left: 10px;
+}
+
+.field-label-message {
+  position: relative;
+  z-index: 10;
+  line-height: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+  margin: 0;
+  transform: translateY(35px);
+  transition: transform 0.3s;
+  transform-origin: 0 50%;
+  color: $primary;
+  margin-left: 10px;
+}
+
+input[type="text"].field-input,
+input[type="tel"].field-input,
+input[type="password"].field-input,
+input[type="email"].field-input {
+  padding: 8px 10px;
+  line-height: 16px;
+  border: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  background-color: $gray;
+}
+
+textarea.field-textarea {
+  position: relative;
+  z-index: 1;
+  background-color: $gray;
+  -webkit-appearance: none;
+  width: 100%;
+  min-height: 72px;
+  font-size: 16px;
+  border: 2px solid $gray;
+  resize: none;
+}
+
+.field:after,
+.field:before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  z-index: 11;
+}
+
+textarea.field-textarea:after,
+textarea.field-textarea:before {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  border: 2px solid $gray;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.field:before {
+  background-color: $gray;
+}
+
+.field:after {
+  background-color: $secondary;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.is-focused .field-label,
+.is-focused .field-label-message {
+  font-size: 12px;
+  color: $secondary;
+}
+
+.field.is-focused:after,
+.field-message.is-focused:after {
+  transform: scaleX(1);
+}
+
+.has-label .field-label,
+.has-label .field-label-message {
+  font-size: 12px;
+  color: $secondary;
+  transform: translateY(0) scale(0.95);
+}
+
+/* The container */
+.container-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 2rem 0;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-text {
+  color: $primary;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  top: 1px;
+}
+
+/* Hide the browser's default checkbox */
+.container-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: $gray;
+  border: 3px solid $primary;
+  border-radius: 2px;
+}
+
+/* On mouse-over, add a grey background color */
+.container-checkbox:hover input ~ .checkmark {
+  background-color: $gray;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-checkbox input:checked ~ .checkmark {
+  background-color: $secondary;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid $white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.message-error {
+  display: none;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  color: $danger;
+}
+
+.error-message {
+  .message-error {
+    bottom: -17px;
+  }
+}
+
+.field-empty {
+  display: block;
+}
+
+.field-invalid {
+  display: block;
+}
+
+.alert-info {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // background-color: rgba($black, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  .alert-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    .alert-content {
+      width: 100%;
+      background-color: $white;
+      padding: 1rem;
+      border-radius: 2px;
+      h3 {
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.radio--container {
+  display: block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1rem;
+  margin: 1rem 0;
+  svg {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+  }
+  span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    svg {
+      @include absolute-center;
+    }
+  }
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .radio--icon-checked {
+    display: none;
+  }
+  input:checked ~ svg.radio--icon-unChecked {
+    display: none;
+  }
+  .radio--icon-unchecked {
+    display: block;
+  }
+  input:checked ~ svg.radio--icon-checked {
+    display: block;
+  }
+}

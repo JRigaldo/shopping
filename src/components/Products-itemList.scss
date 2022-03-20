@@ -1,0 +1,140 @@
+@include medium-down {
+  .itemList--content h3 {
+    font-size: 1.1rem;
+  }
+  .itemList--content h4 {
+    font-size: 0.95rem;
+  }
+  .itemList--content h5 {
+    font-size: 0.75rem;
+  }
+}
+
+@include small-down {
+  .itemList.itemList--container .btn--container.btn--full-width {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .itemList {
+    margin-bottom: 1rem;
+  }
+}
+
+.cart--button {
+  width: 200px;
+  height: 20px;
+  border: 1px solid $primary;
+}
+
+.itemList {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ellipse-icon {
+  display: block;
+  margin: 10px auto 5px auto;
+}
+
+.itemList--container {
+  background-color: $white;
+  border-radius: 7px;
+  cursor: pointer;
+  @extend %shadow;
+  transition-duration: 300ms;
+  .eye-icon {
+    transition-duration: 300ms;
+  }
+  &:hover {
+    @extend %shadow-hover;
+    .eye-icon {
+      background-color: $secondary;
+    }
+  }
+}
+
+.itemList--container.itemList-active {
+  background-color: $gray-light;
+  .itemList--content {
+    h3,
+    h4 {
+      color: $gray-dark;
+    }
+  }
+  .btn--container button.btn.btn--primary > a {
+    background-color: $gray-dark;
+  }
+  .btn--container button.btn.btn--outline > a {
+    border-color: $gray-dark;
+    color: $gray-dark;
+  }
+}
+
+$card-height: 100%;
+$card-min-height: 300px;
+$card-max-height: 400px;
+
+.itemList--container > a {
+  height: $card-height;
+  @include medium-up {
+    min-height: $card-min-height;
+    max-height: $card-max-height;
+  }
+}
+
+.itemList--header {
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  // min-height: 180px;
+  height: 20%;
+  @extend %shadow;
+  img {
+    width: 100%;
+  }
+
+  .eye-icon {
+    position: absolute;
+    z-index: 100;
+    bottom: -15px;
+    right: -10px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: $primary;
+    width: 35px;
+    height: 35px;
+    @extend %shadow;
+  }
+}
+
+.itemList--container a > article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: space-between;
+  height: 100%;
+}
+
+.itemList--content {
+  padding: 8px;
+  h3 {
+    padding: 5px 0 8px 0;
+    color: $secondary;
+    line-height: 1.2rem;
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+    // white-space: nowrap;
+    // overflow: hidden;
+  }
+  h4 {
+    font-size: 1.4rem;
+    color: $primary;
+    font-weight: $black;
+  }
+  h5 {
+    font-size: 1rem;
+    color: $gray-dark;
+    font-weight: $bold;
+  }
+}

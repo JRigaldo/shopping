@@ -1,0 +1,158 @@
+@mixin small {
+  @media only screen and (max-width: 0) and (min-width: #{$small}), (max-width: #{$medium}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (max-width: #{$large}) and (min-width: #{$medium}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: #{$large}) {
+    @content;
+  }
+}
+
+@mixin small-down {
+  @media only screen and (max-width: #{$small}) {
+    @content;
+  }
+}
+
+@mixin medium-down {
+  @media only screen and (max-width: #{$medium-responsive}) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+  @media only screen and (min-width: #{$medium-responsive}) {
+    @content;
+  }
+}
+
+@mixin custom-responsive-down($custom-responsive: "") {
+  @media only screen and (max-width: #{$custom-responsive}) {
+    @content;
+  }
+}
+
+@mixin custom-responsive-up($custom-responsive: "") {
+  @media only screen and (min-width: #{$custom-responsive}) {
+    @content;
+  }
+}
+
+@mixin custom-responsice-middle($custom-responsive-max: "", $custom-responsive-min: "") {
+  @media only screen and (max-width: #{$custom-responsive-max}) and (mmin-width: #{$custom-responsive-min}) {
+    @content;
+  }
+}
+
+@mixin flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin align-center {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin flex-center {
+  @include flex;
+  justify-content: center;
+  @include align-center;
+}
+
+@mixin flex-top {
+  @include flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin transform($transform) {
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  -o-transform: $transform;
+  -moz-transform: $transform;
+  transform: $transform;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    zoom: 1;
+    clear: both;
+  }
+}
+
+@mixin icon($width-a: 30px, $height-a: 30px, $width-icon: 20px, $height-icon: 20px, $color-icon: $white, $color-hover: $secondary) {
+  position: relative;
+  display: block;
+  width: $width-a;
+  height: $height-a;
+  transition-duration: 300ms;
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translateX(-50%) translateY(-50%));
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: $color-icon;
+    path {
+      fill: $color-icon;
+    }
+  }
+
+  &:hover {
+    svg {
+      fill: $color-hover;
+      path {
+        fill: $color-hover;
+      }
+    }
+  }
+}
+
+@mixin hover-white-bg {
+  background-color: $white;
+  transition-duration: 300ms;
+  span {
+    color: $dark;
+  }
+  svg {
+    fill: $primary;
+  }
+  &:hover {
+    background-color: $gray-dark;
+    span {
+      color: $white;
+    }
+    svg {
+      fill: $white;
+    }
+    svg path {
+      fill: $white;
+    }
+  }
+}

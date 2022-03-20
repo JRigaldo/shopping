@@ -1,0 +1,107 @@
+.swiper-wrapper {
+  height: auto;
+}
+
+.item {
+  @include flex-center;
+  height: calc(100% + #{$header-top});
+  flex-direction: column;
+}
+
+.item--detail {
+  position: relative;
+  height: 100vh;
+  min-height: 100%;
+  background-color: $gray-light;
+  @include flex-center;
+  flex-direction: column;
+}
+
+.item--arrowBack {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background-color: $primary;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition-duration: 300ms;
+  @extend %shadow;
+  &:hover {
+    background: $gray-dark;
+  }
+}
+
+.item--container {
+  position: relative;
+  background-color: $white;
+  border-radius: 7px;
+  @extend %shadow;
+  width: 100%;
+  max-width: 300px;
+}
+
+.item--header {
+  img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
+
+.item--content {
+  padding: 8px;
+  h1 {
+    padding: 5px 0;
+    color: $secondary;
+    font-size: 1.2rem;
+  }
+  h4 {
+    font-size: 1.4rem;
+    color: $primary;
+    span {
+      font-size: 2rem;
+      font-weight: $black;
+    }
+  }
+}
+
+.item--text {
+  color: $gray;
+  span {
+    width: 100%;
+    display: inline-block;
+    strong {
+      font-weight: $black;
+    }
+  }
+}
+
+.item--buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+  button {
+    margin: 0;
+    max-width: 50%;
+    &:first-child {
+      margin-right: 3px;
+    }
+    &:last-child {
+      margin-left: 3px;
+    }
+    a {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+    }
+  }
+}
+
+.btn--counter {
+  .btn:disabled {
+    background-color: red;
+  }
+}
